@@ -46,6 +46,3 @@ export const movieApi = {
       params: apiKeyAndLanguage.params
     })
 };
-
-
-};

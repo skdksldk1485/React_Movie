@@ -10,7 +10,6 @@ import Home from "../Pages/Home";
 export default () => (
   <Router>
     <>
-      <Header />
       <Switch>
         <Route path="/" exact component={Home} />
       </Switch>
