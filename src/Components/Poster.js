@@ -27,7 +27,7 @@ const Year = styled.span`
 
 const Image = styled.div`
   background-image: url(${props => props.bgUrl});
-  height: 180px;
+  height: 220px;
   background-size: cover;
   border-radius: 5px;
   background-position: center center;

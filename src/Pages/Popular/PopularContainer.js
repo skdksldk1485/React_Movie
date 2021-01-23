@@ -1,11 +1,9 @@
 import React from "react";
-import HomePresenter from "./HomePresenter";
+import PopularPresenter from "./PopularPresenter";
 import { movieApi } from "../../Components/Api";
 
 export default class extends React.Component {
   state = {
-    nowPlaying: null,
-    upcoming: null,
     popular: null,
     error: null,
     loading: true
@@ -14,17 +12,9 @@ export default class extends React.Component {
   async componentDidMount() {
     try {
       const {
-        data: { results: nowPlaying }
-      } = await movieApi.nowPlaying();
-      const {
-        data: { results: upcoming }
-      } = await movieApi.upcoming();
-      const {
         data: { results: popular }
       } = await movieApi.popular();
       this.setState({
-        nowPlaying,
-        upcoming,
         popular
       });
     } catch {
@@ -39,11 +29,9 @@ export default class extends React.Component {
   }
 
   render() {
-    const { nowPlaying, upcoming, popular, error, loading } = this.state;
+    const { popular, error, loading } = this.state;
     return (
-      <HomePresenter
-        nowPlaying={nowPlaying}
-        upcoming={upcoming}
+      <PopularPresenter
         popular={popular}
         error={error}
         loading={loading}
