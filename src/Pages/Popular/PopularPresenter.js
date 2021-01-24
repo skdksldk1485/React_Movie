@@ -9,6 +9,7 @@ import Poster from "../../Components/Poster";
 
 const Container = styled.div`
   padding: 20px;
+  margin-top: 50px;
 `;
 
 const PopularPresenter = ({ popular, error, loading }) =>
@@ -21,7 +22,7 @@ const PopularPresenter = ({ popular, error, loading }) =>
       </Helmet>
       <Container>
         {popular && popular.length > 0 && (
-          <Section title="Popular Movies">
+          <Section title="인기영화">
             {popular.map(movie => (
               <Poster
                 key={movie.id}

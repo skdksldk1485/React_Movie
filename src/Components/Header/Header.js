@@ -20,7 +20,7 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
-  width: 80px;
+  width: 150px;
   height: 50px;
   text-align: center;
   border-bottom: 3px solid ${props => (props.current ? "red" : "transparent")};
@@ -38,16 +38,16 @@ export default withRouter(({ location: { pathname } }) => (
   <Header>
     <List>
       <Item current={pathname === "/"}>
-        <Slink to="/">Playing</Slink>
+        <Slink to="/">현재상영영화</Slink>
       </Item>
       <Item current={pathname === "/Upcoming"}>
-        <Slink to="/Upcoming">Upcoming</Slink>
+        <Slink to="/Upcoming">개봉예정영화</Slink>
       </Item>
       <Item current={pathname === "/Popular"}>
-        <Slink to="/Popular">Popluar</Slink>
+        <Slink to="/Popular">인기영화</Slink>
       </Item>
       <Item current={pathname === "/search"}>
-        <Slink to="/search">Search</Slink>
+        <Slink to="/search">영화검색</Slink>
       </Item>
     </List>
   </Header>

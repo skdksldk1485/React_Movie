@@ -9,9 +9,10 @@ import Poster from "../../Components/Poster";
 
 const Container = styled.div`
   padding: 20px;
+  margin-top: 50px;
 `;
 
-const UpcomingPresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
+const UpcomingPresenter = ({ upcoming, error, loading }) =>
   loading ? (
     <Loader />
   ) : (
@@ -21,7 +22,7 @@ const UpcomingPresenter = ({ nowPlaying, upcoming, popular, error, loading }) =>
       </Helmet>
       <Container>
         {upcoming && upcoming.length > 0 && (
-          <Section title="Upcoming Movies">
+          <Section title="개봉예정영화">
             {upcoming.map(movie => (
               <Poster
                 key={movie.id}

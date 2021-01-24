@@ -9,6 +9,7 @@ import Poster from "../../Components/Poster";
 
 const Container = styled.div`
   padding: 20px;
+  margin-top: 50px;
 `;
 
 const PlayingPresenter = ({ playing, error, loading }) =>
@@ -21,7 +22,7 @@ const PlayingPresenter = ({ playing, error, loading }) =>
       </Helmet>
       <Container>
         {playing && playing.length > 0 && (
-          <Section title="Now Playing">
+          <Section title="현재상영영화">
             {playing.map(movie => (
               <Poster
                 key={movie.id}
