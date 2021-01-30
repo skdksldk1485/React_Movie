@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiKeyAndLanguage = {
   params: {
-    api_key: "b2e0ccc5b21b3b53128350309f57d23e",
+    api_key: "cd966d78c5d6f111808969f4fa31cf71",
     language: "ko-KR"
   }
 };
@@ -28,7 +28,7 @@ export const movieApi = {
   movieDetail: id =>
     api.get(`movie/${id}`, {
       params: {
-        api_key: "b2e0ccc5b21b3b53128350309f57d23e",
+        api_key: "cd966d78c5d6f111808969f4fa31cf71",
         language: "ko-KR",
         append_to_response: "videos"
       }
@@ -36,9 +36,10 @@ export const movieApi = {
   search: term =>
     api.get("search/movie", {
       params: {
-        api_key: "b2e0ccc5b21b3b53128350309f57d23e",
+        api_key: "cd966d78c5d6f111808969f4fa31cf71",
         language: "ko-KR",
-        query: encodeURIComponent(term)
+        /*query: encodeURIComponent(term)*/
+        query: term
       }
     }),
   movieCollection: id =>
