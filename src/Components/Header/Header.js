@@ -23,7 +23,7 @@ const Item = styled.li`
   width: 150px;
   height: 50px;
   text-align: center;
-  border-bottom: 3px solid ${props => (props.current ? "red" : "transparent")};
+  border-bottom: 3px solid ${props => (props.current ? "blue" : "transparent")};
   transition: border-bottom 0.3s;
 `;
 
