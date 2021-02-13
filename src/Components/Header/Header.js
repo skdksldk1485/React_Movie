@@ -12,8 +12,8 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   z-index: 100;
-  background-color:rgba(20,20,20,1);
-  /* box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8); */
+  background-color:rgba(20,20,30,1);
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8); 
 `;
 
 const List = styled.ul`
