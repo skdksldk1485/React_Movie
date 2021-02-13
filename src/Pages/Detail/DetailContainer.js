@@ -13,8 +13,7 @@ export default class extends React.Component {
       collection: null,
       Seasons: null,
       error: null,
-      loading: true,
-      isMovie: pathname.includes("/movie/")
+      loading: true
     };
   }
 
@@ -26,8 +25,6 @@ export default class extends React.Component {
       history: { push }
     } = this.props;
 
-    const { isMovie } = this.state;
-
     const parsedId = Number(id);
 
     if (isNaN(parsedId)) {
@@ -38,14 +35,10 @@ export default class extends React.Component {
     let collection = null;
     let seasons = null;
     try {
-      if (isMovie) {
         ({ data: result } = await movieApi.movieDetail(parsedId));
         ({ data: collection } = await movieApi.movieCollection(
           result.belongs_to_collection.id
         ));
-      } else {
-        
-      }
     } catch {
       this.setState({
         error: "오류 : 영화정보를 찾을 수 없음!"
@@ -69,8 +62,6 @@ export default class extends React.Component {
         history: { push }
       } = this.props;
 
-      const { isMovie } = this.state;
-
       const parsedId = Number(id);
 
       if (isNaN(parsedId)) {
@@ -81,14 +72,10 @@ export default class extends React.Component {
       let collection = null;
       let seasons = null;
       try {
-        if (isMovie) {
           ({ data: result } = await movieApi.movieDetail(parsedId));
           ({ data: collection } = await movieApi.movieCollection(
             result.belongs_to_collection.id
           ));
-        } else {
-
-        }
       } catch {
         this.setState({
           error: "오류 : 영화정보를 찾을 수 없음!"
